@@ -1,14 +1,19 @@
 {
   "name": "@seiberspace/use-mqtt",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Reactive mqtt-Client and -Subscriptions using MQTT.js.",
-  "main": "dist/use-mqtt.js",
-  "repository": "https://github.com/IUnknown68/use-mqtt.git",
+  "keywords": [ "vue", "vue.js", "mqtt", "reactive", "composition" ],
+  "homepage": "https://github.com/IUnknown68/use-mqtt",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IUnknown68/use-mqtt.git"
+  },
   "author": "Arne Seib",
   "license": "MIT",
   "files": [
     "dist"
   ],
+  "main": "dist/use-mqtt.js",
   "module": "dist/use-mqtt.mjs",
   "types": "dist/use-mqtt.d.ts",
   "exports": {
