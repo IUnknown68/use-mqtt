@@ -1,0 +1,43 @@
+{
+  "name": "@seiberspace/use-mqtt",
+  "version": "0.0.1",
+  "description": "Reactive mqtt-Client and -Subscriptions using MQTT.js.",
+  "main": "dist/use-mqtt.js",
+  "repository": "https://github.com/IUnknown68/use-mqtt.git",
+  "author": "Arne Seib",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "module": "dist/use-mqtt.mjs",
+  "types": "dist/use-mqtt.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/use-mqtt.d.ts",
+        "default": "./dist/use-mqtt.mjs"
+      },
+      "require": {
+        "types": "./dist/use-mqtt.d.ts",
+        "default": "./dist/use-mqtt.js"
+      }
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c rollup.config.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.0",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.10.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-esbuild": "^6.1.1",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.7.2",
+    "mqtt": "^5.3.5",
+    "vue": "^3.4.18"
+  }
+}
