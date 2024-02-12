@@ -1,7 +1,7 @@
 import {
   Ref,
   ref,
-} from 'vue';
+} from 'vue-demi';
 import { reactify } from '@vueuse/core';
 
 import {

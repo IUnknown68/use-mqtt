@@ -9,7 +9,7 @@ import {
   onMounted,
   onBeforeUnmount,
   getCurrentInstance,
-} from 'vue';
+} from 'vue-demi';
 import { reactify } from '@vueuse/core';
 
 import mqttLib, {

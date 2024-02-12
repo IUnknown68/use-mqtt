@@ -1,6 +1,6 @@
 {
   "name": "@seiberspace/use-mqtt",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "Reactive mqtt-Client and -Subscriptions using MQTT.js.",
   "keywords": [
     "vue",
@@ -40,7 +40,6 @@
   },
   "devDependencies": {
     "esbuild": "^0.20.0",
-    "rimraf": "^5.0.5",
     "rollup": "^4.10.0",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-esbuild": "^6.1.1",
