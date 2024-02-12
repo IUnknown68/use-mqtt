@@ -1,4 +1,4 @@
-import { Ref } from 'vue';
+import { Ref } from 'vue-demi';
 import { IClientPublishOptions, Packet, IClientOptions, MqttClient } from 'mqtt';
 
 /**

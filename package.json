@@ -37,7 +37,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c rollup.config.mjs",
-    "deploy": "yarn build && yarn publish --access public"
+    "deploy:patch": "deploy.sh patch",
+    "deploy:minor": "deploy.sh minor",
+    "deploy:major": "deploy.sh major"
   },
   "dependencies": {
     "@vueuse/core": "^10.7.2",
@@ -58,6 +60,7 @@
     "rollup": "^4.10.0",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-esbuild": "^6.1.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vue": "^3.0.0"
   }
 }

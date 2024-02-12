@@ -1,6 +1,6 @@
-import type {
+import {
   Ref,
-} from 'vue';
+} from 'vue-demi';
 
 import type {
   MqttClient,
