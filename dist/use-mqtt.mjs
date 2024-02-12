@@ -1,4 +1,4 @@
-import { ref, shallowRef, shallowReadonly, watch, getCurrentInstance, onMounted, onBeforeUnmount } from 'vue';
+import { ref, shallowRef, shallowReadonly, watch, getCurrentInstance, onMounted, onBeforeUnmount } from 'vue-demi';
 import { reactify } from '@vueuse/core';
 import mqttLib from 'mqtt';
 

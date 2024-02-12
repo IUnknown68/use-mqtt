@@ -1,6 +1,6 @@
 'use strict';
 
-var vue = require('vue');
+var vueDemi = require('vue-demi');
 var core = require('@vueuse/core');
 var mqttLib = require('mqtt');
 
@@ -16,8 +16,8 @@ class Subscription {
   constructor(mqtt, topic, options = {}) {
     this.topic = topic;
     this.refCount = 0;
-    this.ref = vue.ref(options.default);
-    this.error = vue.ref(null);
+    this.ref = vueDemi.ref(options.default);
+    this.error = vueDemi.ref(null);
     this.update = this.update.bind(this);
     this.subscribe = this.subscribe.bind(this);
     this.unsubscribe = (force = false) => {
@@ -63,8 +63,8 @@ class ReactiveMqtt {
   constructor(id) {
     this.id = id;
     this.subscriptions = /* @__PURE__ */ new Map();
-    this.client = vue.shallowRef(null);
-    this.state = vue.ref(ConnectionState.Closed);
+    this.client = vueDemi.shallowRef(null);
+    this.state = vueDemi.ref(ConnectionState.Closed);
     this.create = this.create.bind(this);
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
@@ -72,9 +72,9 @@ class ReactiveMqtt {
     this.subscribe = this.subscribe.bind(this);
     this.hook = {
       // Error is writable!
-      error: vue.ref(null),
-      client: vue.shallowReadonly(this.client),
-      state: vue.shallowReadonly(this.state),
+      error: vueDemi.ref(null),
+      client: vueDemi.shallowReadonly(this.client),
+      state: vueDemi.shallowReadonly(this.state),
       connected: isConnected(this.state),
       busy: isBusy(this.state),
       create: this.create,
@@ -181,7 +181,7 @@ class ReactiveMqtt {
   //----------------------------------------------------------------------------
   subscribe(topic, options = {}) {
     const subscriptionRecordRef = getSubscription(this, topic, options);
-    vue.watch(subscriptionRecordRef, (newValue, oldValue) => {
+    vueDemi.watch(subscriptionRecordRef, (newValue, oldValue) => {
       if (oldValue) {
         oldValue.unsubscribe();
       }
@@ -189,9 +189,9 @@ class ReactiveMqtt {
         newValue.subscribe();
       }
     });
-    if (vue.getCurrentInstance()) {
-      vue.onMounted(subscriptionRecordRef.value.subscribe);
-      vue.onBeforeUnmount(subscriptionRecordRef.value.unsubscribe);
+    if (vueDemi.getCurrentInstance()) {
+      vueDemi.onMounted(subscriptionRecordRef.value.subscribe);
+      vueDemi.onBeforeUnmount(subscriptionRecordRef.value.unsubscribe);
     } else {
       subscriptionRecordRef.value.subscribe();
     }
