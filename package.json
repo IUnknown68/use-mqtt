@@ -36,7 +36,22 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c rollup.config.mjs"
+    "build": "rollup -c rollup.config.mjs",
+    "deploy": "yarn build && yarn publish --access public"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.7.2",
+    "mqtt": "^5.3.5",
+    "vue-demi": ">=0.14.6"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "^1.0.0-rc.1",
+    "vue": "^2.0.0 || >=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "esbuild": "^0.20.0",
@@ -44,10 +59,5 @@
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-esbuild": "^6.1.1",
     "typescript": "^5.3.3"
-  },
-  "dependencies": {
-    "@vueuse/core": "^10.7.2",
-    "mqtt": "^5.3.5",
-    "vue": "^3.4.18"
   }
 }
